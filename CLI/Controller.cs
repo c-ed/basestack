@@ -30,7 +30,12 @@ namespace BaseStack.CLI
                 throw new Exception($"No type found for '{command.Class}'");
 
             var instance = Activator.CreateInstance(commandType);
-            var method = instance.GetType().GetMethod(command.Name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase);
+            var method = instance.GetType().GetMethod(command.Method, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase);
+            var parameters = method.GetParameters();
+
+            if (args.Length != parameters.Length)
+                throw new Exception($"The '{command.Name}' command expects {parameters.Length} arguments");
+
             method.Invoke(instance, args);
         }
 

@@ -8,5 +8,10 @@ namespace BaseStack.CLI.Commands
         {
             Console.WriteLine("Help");
         }
+
+        public void OtherHelp(string arg1, string arg2)
+        {
+            Console.WriteLine($"Hello arg1: {arg1} arg2: {arg2}");
+        }
     }
 }
