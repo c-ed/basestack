@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using BaseStack.Business.Controllers;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using BaseStack.Business.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace BaseStack.Engine
 {
@@ -29,6 +31,9 @@ namespace BaseStack.Engine
                 .ConfigureApplicationPartManager(partManager => partManager.ApplicationParts.Add(businessPart));
 
             services.AddRazorPages();
+
+            services.AddEntityFrameworkSqlite().AddDbContext<BusinessDbContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("LabGoatDbContext"), b => b.MigrationsAssembly("Server")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
