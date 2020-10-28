@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BaseStack.CLI.Model
+namespace SqwareBase.CLI.Model
 {
     public class AppSettings
     {

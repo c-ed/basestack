@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using BaseStack.CLI.Model;
+using SqwareBase.CLI.Model;
 using Microsoft.Extensions.Options;
 
-namespace BaseStack.CLI
+namespace SqwareBase.CLI
 {
     public class Controller
     {

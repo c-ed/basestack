@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>BaseStack.Engine</RootNamespace>
-    <AssemblyName>BaseStack.Engine</AssemblyName>
+    <RootNamespace>SqwareBase.Engine</RootNamespace>
+    <AssemblyName>SqwareBase.Engine</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Engine' " />

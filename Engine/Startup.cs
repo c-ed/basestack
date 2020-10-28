@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BaseStack.Business.Controllers;
+using SqwareBase.Business.Controllers;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
-using BaseStack.Business.Data;
+using SqwareBase.Business.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace BaseStack.Engine
+namespace SqwareBase.Engine
 {
     public class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 
-namespace BaseStack.Business.Data
+namespace SqwareBase.Business.Data
 {
     public class BusinessDbContext : DbContext
     {

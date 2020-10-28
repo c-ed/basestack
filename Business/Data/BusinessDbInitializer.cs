@@ -1,5 +1,5 @@
 ﻿using System;
-namespace BaseStack.Business.Data
+namespace SqwareBase.Business.Data
 {
     public static class BusinessDbInitializer
     {

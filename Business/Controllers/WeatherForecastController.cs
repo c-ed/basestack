@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using BaseStack.Business.Model;
+using SqwareBase.Business.Model;
 
-namespace BaseStack.Business.Controllers
+namespace SqwareBase.Business.Controllers
 {
     [ApiController]
     [Route("[controller]")]

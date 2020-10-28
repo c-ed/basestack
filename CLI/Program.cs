@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BaseStack.CLI
+namespace SqwareBase.CLI
 {
     public class Program
     {

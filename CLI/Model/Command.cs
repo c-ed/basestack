@@ -1,4 +1,4 @@
-﻿namespace BaseStack.CLI.Model
+﻿namespace SqwareBase.CLI.Model
 {
     public class Command
     {

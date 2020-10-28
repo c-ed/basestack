@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BaseStack.CLI.Commands
+namespace SqwareBase.CLI.Commands
 {
     public class HelpCommands
     {

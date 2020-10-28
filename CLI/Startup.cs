@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
-using BaseStack.CLI.Model;
+using SqwareBase.CLI.Model;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BaseStack.CLI
+namespace SqwareBase.CLI
 {
     public class Startup
     {

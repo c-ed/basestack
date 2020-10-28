@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BaseStack.Business.Model
+namespace SqwareBase.Business.Model
 {
     public class WeatherForecast
     {

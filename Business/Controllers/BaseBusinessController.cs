@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace BaseStack.Business.Controllers
+namespace SqwareBase.Business.Controllers
 {
     [ApiController]
     [Route("[controller]")]

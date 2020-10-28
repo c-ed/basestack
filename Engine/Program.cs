@@ -1,10 +1,10 @@
 ﻿using System;
-using BaseStack.Business.Data;
+using SqwareBase.Business.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace BaseStack.Engine
+namespace SqwareBase.Engine
 {
     public class Program
     {

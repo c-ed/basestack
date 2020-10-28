@@ -4,7 +4,7 @@
     "anonymousAuthentication": true
   },
   "profiles": {
-    "BaseStack.Web": {
+    "SqwareBase.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:55889",
