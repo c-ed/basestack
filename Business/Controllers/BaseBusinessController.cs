@@ -3,7 +3,7 @@
 namespace SqwareBase.Business.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BaseBusinessController : ControllerBase
     {
         public BaseBusinessController()

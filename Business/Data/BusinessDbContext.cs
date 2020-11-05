@@ -1,10 +1,13 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
+using SqwareBase.Business.Model;
 
 namespace SqwareBase.Business.Data
 {
     public class BusinessDbContext : DbContext
     {
+        public DbSet<Widget> Widgets { get; set; }
+
         public BusinessDbContext(DbContextOptions<BusinessDbContext> options)
             : base(options)
         { }

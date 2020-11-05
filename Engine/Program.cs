@@ -1,8 +1,8 @@
 ﻿using System;
-using SqwareBase.Business.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SqwareBase.Business;
 
 namespace SqwareBase.Engine
 {
@@ -17,8 +17,8 @@ namespace SqwareBase.Engine
                 using (var scope = host.Services.CreateScope())
                 {
                     var services = scope.ServiceProvider;
-                    var dbContext = services.GetRequiredService<BusinessDbContext>();
-                    BusinessDbInitializer.Initialize(dbContext);
+                    var business = services.GetRequiredService<BusinessService>();
+                    business.Start();
                 }
 
                 host.Run();
@@ -33,9 +33,9 @@ namespace SqwareBase.Engine
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+                .ConfigureWebHostDefaults(builder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    builder.UseStartup<Startup>();
                 });
     }
 }

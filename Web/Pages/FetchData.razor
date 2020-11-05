@@ -2,11 +2,11 @@
 @using SqwareBase.Business.Model
 @inject HttpClient Http
 
-<h1>Weather forecast</h1>
+<h1>Widgets</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (forecasts == null)
+@if (widgets == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -15,20 +15,14 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Name</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var widget in widgets)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@widget.Name</td>
                 </tr>
             }
         </tbody>
@@ -36,11 +30,11 @@ else
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    private WidgetResource[] widgets;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("weatherforecast");
+        widgets = await Http.GetFromJsonAsync<WidgetResource[]>("api/widgets");
     }
 
 }

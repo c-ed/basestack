@@ -6,8 +6,7 @@ using Microsoft.Extensions.Hosting;
 using SqwareBase.Business.Controllers;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
-using SqwareBase.Business.Data;
-using Microsoft.EntityFrameworkCore;
+using SqwareBase.Business.Config;
 
 namespace SqwareBase.Engine
 {
@@ -32,8 +31,7 @@ namespace SqwareBase.Engine
 
             services.AddRazorPages();
 
-            services.AddEntityFrameworkSqlite().AddDbContext<BusinessDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("LabGoatDbContext"), b => b.MigrationsAssembly("Server")));
+            BusinessConfig.Configure(Configuration, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
