@@ -31,7 +31,7 @@ namespace SqwareBase.Engine
 
             services.AddRazorPages();
 
-            BusinessConfig.Configure(Configuration, services);
+            BusinessStartup.Configure(Configuration, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,6 @@ namespace SqwareBase.Engine
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

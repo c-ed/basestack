@@ -5,12 +5,13 @@ using SqwareBase.Business.Data;
 
 namespace SqwareBase.Business.Config
 {
-    public class BusinessConfig
+    public class BusinessStartup
     {
         public static void Configure(IConfiguration configuration, IServiceCollection services)
         {
             var connectionString = configuration.GetConnectionString(nameof(BusinessDbContext));
             var migrationAssembly = typeof(BusinessDbContext).Assembly.FullName;
+
             services.AddEntityFrameworkSqlite().AddDbContext<BusinessDbContext>(database =>
                 database.UseSqlite(connectionString, options => options.MigrationsAssembly(migrationAssembly)));
 
