@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using SqwareBase.Domain.Data;
-using SqwareBase.Domain.Model;
+using SqwareBase.Business.Data;
+using SqwareBase.Business.Model;
 
-namespace SqwareBase.Domain.Services
+namespace SqwareBase.Business.Services
 {
     public class WidgetService
     {
-        private readonly DomainDbContext _dbContext;
+        private readonly BusinessDbContext _dbContext;
 
-        public WidgetService(DomainDbContext dbContext)
+        public WidgetService(BusinessDbContext dbContext)
         {
             _dbContext = dbContext;
         }

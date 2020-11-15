@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
-using SqwareBase.Domain.Model;
+using SqwareBase.Business.Model;
 
-namespace SqwareBase.Domain.Data
+namespace SqwareBase.Business.Data
 {
-    public class DomainDbSeeder
+    public class BusinessDbSeeder
     {
-        private readonly DomainDbContext _dbContext;
+        private readonly BusinessDbContext _dbContext;
 
-        public DomainDbSeeder(DomainDbContext dbContext)
+        public BusinessDbSeeder(BusinessDbContext dbContext)
         {
             _dbContext = dbContext;
         }

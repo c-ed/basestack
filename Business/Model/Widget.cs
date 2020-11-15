@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SqwareBase.Domain.Model
+namespace SqwareBase.Business.Model
 {
     public class Widget
     {

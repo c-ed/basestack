@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using SqwareBase.Domain.Services;
+using SqwareBase.Business.Services;
 
 namespace SqwareBase.Server
 {
@@ -22,7 +22,7 @@ namespace SqwareBase.Server
                 using (var scope = host.Services.CreateScope())
                 {
                     var services = scope.ServiceProvider;
-                    services.GetRequiredService<DomainService>().Start();
+                    services.GetRequiredService<BusinessService>().Start();
                 }
 
                 host.Run();

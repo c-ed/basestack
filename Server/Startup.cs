@@ -1,9 +1,9 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SqwareBase.Domain.Config;
+using SqwareBase.Business.Config;
 
 namespace SqwareBase.Server
 {
@@ -23,7 +23,7 @@ namespace SqwareBase.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            DomainConfig.Configure(Configuration, services);
+            BusinessConfig.Configure(Configuration, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

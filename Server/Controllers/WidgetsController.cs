@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using SqwareBase.Domain.Model;
-using SqwareBase.Domain.Services;
+using SqwareBase.Business.Model;
+using SqwareBase.Business.Services;
 
 namespace SqwareBase.Server.Controllers
 {
-    public class WidgetsController : DomainController
+    public class WidgetsController : BusinessController
     {
         private readonly WidgetService _widgetsService;
 
