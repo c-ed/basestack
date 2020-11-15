@@ -1,14 +1,12 @@
 ﻿using System;
-using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using SqwareBase.Business;
-using SqwareBase.Business.Config;
+using SqwareBase.Domain.Services;
 
-namespace SqwareBase.Engine
+namespace SqwareBase.Server
 {
     public class Program
     {
@@ -18,13 +16,13 @@ namespace SqwareBase.Engine
             {
                 CreateLogger();
 
-                Log.Information("test");
+                Log.Information("Starting SqwareBase");
 
                 var host = CreateHostBuilder(args).Build();
                 using (var scope = host.Services.CreateScope())
                 {
                     var services = scope.ServiceProvider;
-                    services.GetRequiredService<BusinessService>().Start();
+                    services.GetRequiredService<DomainService>().Start();
                 }
 
                 host.Run();

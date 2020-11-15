@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>SqwareBase.Domain</RootNamespace>
+    <AssemblyName>SqwareBase.Domain</AssemblyName>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Data\" />
+    <Folder Include="Model\" />
+    <Folder Include="Services\" />
+    <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0" />
+  </ItemGroup>
+    
+</Project>

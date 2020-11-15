@@ -1,5 +1,7 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace SqwareBase.CLI
 {
@@ -9,6 +11,10 @@ namespace SqwareBase.CLI
         {
             try
             {
+                CreateLogger();
+
+                Log.Information("Starting Business CLI");
+
                 var services = new ServiceCollection();
                 Startup.Initialize(services);
 
@@ -19,6 +25,17 @@ namespace SqwareBase.CLI
             {
                 Console.WriteLine($"Error: {exception.Message}");
             }
+        }
+
+        private static void CreateLogger()
+        {
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(new ConfigurationBuilder()
+                    .SetBasePath(Environment.CurrentDirectory)
+                    .AddJsonFile("appsettings.json", true, true)
+                    .AddEnvironmentVariables()
+                    .Build())
+                .CreateLogger();
         }
     }
 }

@@ -3,12 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SqwareBase.Business.Controllers;
-using System.Reflection;
-using Microsoft.AspNetCore.Mvc.ApplicationParts;
-using SqwareBase.Business.Config;
+using SqwareBase.Domain.Config;
 
-namespace SqwareBase.Engine
+namespace SqwareBase.Server
 {
     public class Startup
     {
@@ -23,15 +20,10 @@ namespace SqwareBase.Engine
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var businessAssebmly = typeof(BaseBusinessController).GetTypeInfo().Assembly;
-            var businessPart = new AssemblyPart(businessAssebmly);
-
-            services.AddControllersWithViews()
-                .ConfigureApplicationPartManager(partManager => partManager.ApplicationParts.Add(businessPart));
-
+            services.AddControllersWithViews();
             services.AddRazorPages();
 
-            BusinessStartup.Configure(Configuration, services);
+            DomainConfig.Configure(Configuration, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +44,7 @@ namespace SqwareBase.Engine
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

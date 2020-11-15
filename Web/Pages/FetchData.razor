@@ -1,8 +1,8 @@
-@page "/fetchdata"
-@using SqwareBase.Business.Model
+﻿@page "/fetchdata"
+@using SqwareBase.Domain.Model
 @inject HttpClient Http
 
-<h1>Widgets</h1>
+<h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
@@ -30,11 +30,11 @@ else
 }
 
 @code {
-    private WidgetResource[] widgets;
+    private Widget[] widgets;
 
     protected override async Task OnInitializedAsync()
     {
-        widgets = await Http.GetFromJsonAsync<WidgetResource[]>("api/widgets");
+        widgets = await Http.GetFromJsonAsync<Widget[]>("api/widgets");
     }
 
 }

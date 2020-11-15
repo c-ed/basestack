@@ -1,14 +1,14 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
-using SqwareBase.Business.Model;
+using SqwareBase.Domain.Model;
 
-namespace SqwareBase.Business.Data
+namespace SqwareBase.Domain.Data
 {
-    public class BusinessDbContext : DbContext
+    public class DomainDbContext : DbContext
     {
         public DbSet<Widget> Widgets { get; set; }
 
-        public BusinessDbContext(DbContextOptions<BusinessDbContext> options)
+        public DomainDbContext(DbContextOptions<DomainDbContext> options)
             : base(options)
         { }
 
